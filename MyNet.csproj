@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5B0F697-7DF5-462E-AA9F-6E967C5DF428}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MyNet</RootNamespace>
+    <AssemblyName>MyNet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AbstractBootstrap.cs" />
+    <Compile Include="Buffer\AbstractChunk.cs" />
+    <Compile Include="Buffer\AgentByteStream.cs" />
+    <Compile Include="Buffer\CSharpStream.cs" />
+    <Compile Include="Buffer\PoolIOStream.cs" />
+    <Compile Include="Buffer\IStreamAllocator.cs" />
+    <Compile Include="Channel\ReadPacket.cs" />
+    <Compile Include="Channel\WritePacket.cs" />
+    <Compile Include="ClientConnection\Connection.cs" />
+    <Compile Include="ClientConnection\AbstractConnectionFactory.cs" />
+    <Compile Include="ClientConnection\ConnectionManager.cs" />
+    <Compile Include="ClientConnection\ConnectionCollection.cs" />
+    <Compile Include="ClientConnection\IConnection.cs" />
+    <Compile Include="Common\ByteBits.cs" />
+    <Compile Include="Common\Compression.cs" />
+    <Compile Include="Common\Converter.cs" />
+    <Compile Include="Common\Converts\ArrayConvert.cs" />
+    <Compile Include="Common\Converts\DictionaryConvert.cs" />
+    <Compile Include="Common\Converts\ListConvert.cs" />
+    <Compile Include="Common\Converts\NoConvert.cs" />
+    <Compile Include="Common\Converts\NotSupportedConvert.cs" />
+    <Compile Include="Common\Converts\NullableConvert.cs" />
+    <Compile Include="Common\Converts\NullConvert.cs" />
+    <Compile Include="Common\Converts\PropertyCache.cs" />
+    <Compile Include="Common\Converts\SimpleContert.cs" />
+    <Compile Include="Common\Converts\TimeConvert.cs" />
+    <Compile Include="Common\Crypter.cs" />
+    <Compile Include="Common\PropertyCollection.cs" />
+    <Compile Include="Common\Utility.cs" />
+    <Compile Include="Common\IConvert.cs" />
+    <Compile Include="Common\ILoggerListener.cs" />
+    <Compile Include="Common\Log\ConsoleListener.cs" />
+    <Compile Include="Handlers\AbstractChannelHandler.cs" />
+    <Compile Include="Handlers\ClientChannelHandler.cs" />
+    <Compile Include="Handlers\IdleStateHandler.cs" />
+    <Compile Include="Handlers\LoopTimeoutHandler.cs" />
+    <Compile Include="InitializerHandler.cs" />
+    <Compile Include="IServerChannelFactory.cs" />
+    <Compile Include="Buffer\BigChunk.cs" />
+    <Compile Include="Buffer\MinChunk.cs" />
+    <Compile Include="Buffer\PoolBufferAllocator.cs" />
+    <Compile Include="Channel\TcpChannel.cs" />
+    <Compile Include="Bootstrap.cs" />
+    <Compile Include="ChannelFactory.cs" />
+    <Compile Include="Loop\AbstractRun.cs" />
+    <Compile Include="Loop\SimpleTimeOut.cs" />
+    <Compile Include="Loop\ThreeRunnable.cs" />
+    <Compile Include="Loop\TimeOut.cs" />
+    <Compile Include="Loop\TriggerRunnable.cs" />
+    <Compile Include="Loop\TwoRunnable.cs" />
+    <Compile Include="Buffer\IByteStream.cs" />
+    <Compile Include="Buffer\IChunk.cs" />
+    <Compile Include="IChannelFactory.cs" />
+    <Compile Include="ChannelGroup.cs" />
+    <Compile Include="Channel\AbstractChannel.cs" />
+    <Compile Include="Channel\DefaultChannelConfig.cs" />
+    <Compile Include="Channel\IChannelConfig.cs" />
+    <Compile Include="Channel\ServerChannel.cs" />
+    <Compile Include="Handlers\DefaultChannelPipeline.cs" />
+    <Compile Include="Channel\ChannelBase.cs" />
+    <Compile Include="Channel\ChannelID.cs" />
+    <Compile Include="Handlers\DefaultChannelHandlerContext.cs" />
+    <Compile Include="Handlers\HeadContext.cs" />
+    <Compile Include="Handlers\IChannelPipeline.cs" />
+    <Compile Include="Channel\TcpSocketChannel.cs" />
+    <Compile Include="Common\AgentLogger.cs" />
+    <Compile Include="Common\BaseDisposable.cs" />
+    <Compile Include="Channel\TcpServerSocketChannel.cs" />
+    <Compile Include="Common\BinaryHeap.cs" />
+    <Compile Include="Handlers\IChannelHandler.cs" />
+    <Compile Include="Handlers\IContext.cs" />
+    <Compile Include="Handlers\TailContext.cs" />
+    <Compile Include="Loop\DefaultRunnable.cs" />
+    <Compile Include="Loop\Scheduler\IExecutor.cs" />
+    <Compile Include="Loop\Scheduler\IRunnable.cs" />
+    <Compile Include="Loop\Scheduler\ITriggerRunnable.cs" />
+    <Compile Include="Handlers\ChannleHandlerContext.cs" />
+    <Compile Include="Loop\SimpleRunnable.cs" />
+    <Compile Include="Loop\Scheduler\SingleThreadExecutor.cs" />
+    <Compile Include="Loop\Scheduler\TriggerExecutor.cs" />
+    <Compile Include="Loop\EventLoop.cs" />
+    <Compile Include="EventLoopGroup.cs" />
+    <Compile Include="Loop\IEventLoop.cs" />
+    <Compile Include="IEventLoopGroup.cs" />
+    <Compile Include="Middleware\Http\ContentType.cs" />
+    <Compile Include="Middleware\Http\HeaderBuilder.cs" />
+    <Compile Include="Middleware\Http\HttpConfig.cs" />
+    <Compile Include="Middleware\Http\HttpCookie.cs" />
+    <Compile Include="Middleware\Http\HttpCookieCollection.cs" />
+    <Compile Include="Middleware\Http\HttpFile.cs" />
+    <Compile Include="Middleware\Http\HttpMethod.cs" />
+    <Compile Include="Middleware\Http\HttpNameValueCollection.cs" />
+    <Compile Include="Middleware\Http\HttpRequest.cs" />
+    <Compile Include="Middleware\Http\HttpRequestParseResult.cs" />
+    <Compile Include="Middleware\Http\HttpResponse.cs" />
+    <Compile Include="Middleware\Http\HttpResponseEncoder.cs" />
+    <Compile Include="Middleware\Http\HttpServerHandler.cs" />
+    <Compile Include="Middleware\Http\HttpRequestParser.cs" />
+    <Compile Include="Middleware\Http\HttpState.cs" />
+    <Compile Include="Middleware\Http\IHttpHandlerState.cs" />
+    <Compile Include="Middleware\Http\IStateSource.cs" />
+    <Compile Include="Middleware\Http\MultipartHead.cs" />
+    <Compile Include="Middleware\Http\DefaultWebSocketHandler.cs" />
+    <Compile Include="Middleware\Http\WebSocketState.cs" />
+    <Compile Include="Middleware\Http\WebSocket\CloseRequest.cs" />
+    <Compile Include="Middleware\Http\WebSocket\FrameCodes.cs" />
+    <Compile Include="Middleware\Http\WebSocket\FrameRequest.cs" />
+    <Compile Include="Middleware\Http\WebSocket\FrameResponse.cs" />
+    <Compile Include="Middleware\Http\WebSocket\HandshakeResponse.cs" />
+    <Compile Include="Middleware\Http\WebSocket\StatusCodes.cs" />
+    <Compile Include="Middleware\Http\WebSocket\TextRequest.cs" />
+    <Compile Include="Middleware\SSL\SSLUnwrapStream.cs" />
+    <Compile Include="Middleware\SSL\SSLHandlerState.cs" />
+    <Compile Include="Middleware\SSL\SSLAsyncResult.cs" />
+    <Compile Include="Middleware\SSL\SSLResult.cs" />
+    <Compile Include="Middleware\SSL\SSLServerHandler.cs" />
+    <Compile Include="Middleware\SSL\SSLAgentStream.cs" />
+    <Compile Include="Middleware\SSL\SSLUtils.cs" />
+    <Compile Include="Middleware\SSL\SSLSyncResult.cs" />
+    <Compile Include="Middleware\SSL\SSLWritePacket.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServerBootstrap.cs" />
+    <Compile Include="ServerChannelFactory.cs" />
+    <Compile Include="Handlers\ServerChannelHandler.cs" />
+    <Compile Include="ServerSettings.cs" />
+    <Compile Include="Buffer\AbstractByteStream.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
